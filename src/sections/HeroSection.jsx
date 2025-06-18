@@ -5,8 +5,12 @@ const HeroSection = () => {
         Bienvenue sur mon portfolio
       </h1>
       <p className="text-gray-700 text-lg max-w-prose">
-        Je suis développeur web passionné, spécialisé en React. Faites défiler pour en savoir plus sur moi et mes projets.
+        Je suis développeur web passionné, spécialisé en React. Faites défiler
+        pour en savoir plus sur moi et mes projets.
       </p>
+      <div className="mt-10 animate-bounce text-blue-600 text-sm">
+        ↓ Faites défiler ↓
+      </div>
     </section>
   );
 };
