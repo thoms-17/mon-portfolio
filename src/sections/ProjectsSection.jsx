@@ -40,7 +40,11 @@ const ProjectsSection = () => {
                 key={project.id}
                 className="keen-slider__slide flex justify-center"
               >
-                <ProjectCard {...project} />
+                <div className="p-2">
+                  {" "}
+                  {/* padding pour éviter le rognage du scale */}
+                  <ProjectCard {...project} />
+                </div>
               </div>
             ))}
           </div>

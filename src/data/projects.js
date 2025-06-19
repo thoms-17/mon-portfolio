@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
     title: "Pokedex React",
-    image: "/images/pokedex.png", // à stocker dans public/images
+    image: "/images/pikachu.jpg", // à stocker dans public/images
     description: "Une application React connectée à l'API PokéAPI.",
     github: "https://github.com/tonpseudo/pokedex-react",
   },
