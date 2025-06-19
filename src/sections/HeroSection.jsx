@@ -61,15 +61,9 @@ const HeroSection = () => {
           >
             <button 
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg"
+              className="px-8 py-4 bg-[#296297] text-[#296297] rounded-full font-semibold hover:bg-blue-700 transition-all duration-500 hover:scale-105 shadow-lg"
             >
               Voir mes projets
-            </button>
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105"
-            >
-              Me contacter
             </button>
           </motion.div>
 

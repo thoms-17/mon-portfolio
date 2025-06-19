@@ -71,7 +71,7 @@ const Navbar = () => {
           <button
             ref={buttonRef}
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-[#296297] hover:text-blue-600 focus:outline-none transition-transform duration-300"
+            className="md:hidden rounded-lg px-4 py-2 text-base font-medium bg-[#296297] text-white cursor-pointer transition duration-300 hover:bg-[#1e4c73] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#296297]"
           >
             <motion.div
               initial={false}
