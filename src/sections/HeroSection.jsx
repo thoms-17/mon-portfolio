@@ -61,7 +61,7 @@ const HeroSection = () => {
           >
             <button 
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 bg-[#296297] text-[#296297] rounded-full font-semibold hover:bg-blue-700 transition-all duration-500 hover:scale-105 shadow-lg"
+              className="px-8 py-4 bg-[#296297] text-white rounded-full font-semibold hover:bg-blue-700 transition-transform duration-300 hover:scale-105 shadow-lg cursor-pointer"
             >
               Voir mes projets
             </button>
@@ -74,13 +74,13 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 1 }}
             className="flex justify-center gap-6 mb-16"
           >
-            <a href="https://github.com" className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 text-gray-700 hover:text-blue-600">
+            <a href="https://github.com" className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-110 text-gray-700 hover:text-blue-600">
               <Github size={24} />
             </a>
-            <a href="https://linkedin.com" className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 text-gray-700 hover:text-blue-600">
+            <a href="https://linkedin.com" className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-110 text-gray-700 hover:text-blue-600">
               <Linkedin size={24} />
             </a>
-            <a href="mailto:contact@example.com" className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 text-gray-700 hover:text-blue-600">
+            <a href="mailto:contact@example.com" className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-110 text-gray-700 hover:text-blue-600">
               <Mail size={24} />
             </a>
           </motion.div>
