@@ -5,8 +5,10 @@ const Layout = () => {
   return (
     <>
       <Navbar />
-      <main className="pt-16 px-4 max-w-5xl mx-auto">
-        <Outlet />
+      <main className="pt-16">
+        <section>
+          <Outlet />
+        </section>
       </main>
     </>
   );

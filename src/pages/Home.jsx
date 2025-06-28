@@ -4,11 +4,11 @@ import ProjectsSection from "../sections/ProjectsSection";
 
 const Home = () => {
   return (
-    <>
+    <div className="w-full">
       <HeroSection />
       <AboutSection />
       <ProjectsSection />
-    </>
+    </div>
   );
 };
 

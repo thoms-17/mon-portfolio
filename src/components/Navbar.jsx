@@ -32,7 +32,6 @@ const Navbar = () => {
   }, [isOpen]);
 
   const links = [
-    { href: "top", label: "Accueil" },
     { href: "#about", label: "À propos" },
     { href: "#projects", label: "Projets" },
     { href: "#contact", label: "Contact" },
@@ -102,13 +101,9 @@ const Navbar = () => {
               {links.map(({ href, label }) => (
                 <a
                   key={href}
-                  href={href === "top" ? undefined : href}
+                  href={href}
                   onClick={(e) => {
                     setIsOpen(false);
-                    if (href === "top") {
-                      e.preventDefault();
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }
                   }}
                   className="text-lg text-[#296297] hover:text-blue-600 transition-transform transform hover:scale-110 cursor-pointer"
                 >
