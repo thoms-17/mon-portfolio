@@ -48,7 +48,7 @@ const Navbar = () => {
           {/* Logo */}
           <a
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-xl font-bold text-[#296297] hover:text-blue-600 inline-block transform transition-transform duration-300 hover:scale-112 cursor-pointer"
+            className="text-xl font-bold text-[#296297] hover:text-[#1F4D73] inline-block transform transition-transform duration-300 hover:scale-112 cursor-pointer"
           >
             Mon Portfolio
           </a>
@@ -59,7 +59,7 @@ const Navbar = () => {
               <a
                 key={href}
                 href={href}
-                className="inline-block transform transition-transform duration-300 hover:scale-125 text-[#296297] hover:text-blue-600"
+                className="inline-block transform transition-transform duration-300 hover:scale-125 text-[#296297] hover:text-[#1F4D73]"
               >
                 {label}
               </a>
@@ -70,7 +70,7 @@ const Navbar = () => {
           <button
             ref={buttonRef}
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden rounded-lg px-4 py-2 text-base font-medium bg-[#296297] text-white cursor-pointer transition duration-300 hover:bg-[#1e4c73] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#296297]"
+            className="md:hidden rounded-lg px-4 py-2 text-base font-medium bg-[#296297] text-white cursor-pointer transition duration-300 hover:bg-[#1e4c73] focus:outline-none"
           >
             <motion.div
               initial={false}
@@ -105,7 +105,7 @@ const Navbar = () => {
                   onClick={(e) => {
                     setIsOpen(false);
                   }}
-                  className="text-lg text-[#296297] hover:text-blue-600 transition-transform transform hover:scale-110 cursor-pointer"
+                  className="text-lg text-[#296297] hover:text-[#1F4D73] transition-transform transform hover:scale-110 cursor-pointer"
                 >
                   {label}
                 </a>
