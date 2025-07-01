@@ -75,16 +75,13 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
           >
-            <button
-              onClick={() =>
-                document
-                  .getElementById("projects")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+            <a
+              href="/cv.pdf"
+              download
               className="px-8 py-4 bg-[#296297] text-white rounded-full font-semibold hover:bg-[#1F4D73] transition-transform duration-300 hover:scale-105 shadow-lg cursor-pointer"
             >
               Télécharger mon CV
-            </button>
+            </a>
           </motion.div>
 
           {/* Social Links */}
