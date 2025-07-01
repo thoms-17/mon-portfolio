@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -35,15 +35,15 @@ const HeroSection = () => {
         >
           {/* Profile Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 2 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-32 h-32 mx-auto mb-8 relative"
           >
-            <div className="w-full h-full bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-xl">
-              TC
+            <div className="w-full h-full bg-gradient-to-br from-[#296297] to-indigo-600 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-xl">
+              Thomas Cooper
             </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full animate-ping opacity-25"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#296297] to-indigo-600 rounded-full animate-ping opacity-25"></div>
           </motion.div>
 
           {/* Main Title */}
@@ -54,7 +54,7 @@ const HeroSection = () => {
             className="text-5xl md:text-7xl font-bold text-gray-800 mb-6"
           >
             Développeur
-            <span className="block text-blue-600">Full Stack</span>
+            <span className="block text-[#296297]">Full Stack Junior</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -64,8 +64,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            Passionné par la création d'expériences web modernes et performantes
-            avec React, TypeScript et les dernières technologies.
+            Passionné par le Web, le Big Data & l'Intelligence Artificielle
           </motion.p>
 
           {/* CTA Buttons */}
@@ -73,14 +72,22 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+            className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center mb-12"
           >
             <a
-              href="/cv.pdf"
+              href="/cv-thomas-cooper.pdf"
               download
-              className="px-8 py-4 bg-[#296297] text-white rounded-full font-semibold hover:bg-[#1F4D73] transition-transform duration-300 hover:scale-105 shadow-lg cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 px-8 w-fit py-4 bg-[#296297] text-white rounded-full font-semibold hover:bg-[#1F4D73] transition-transform duration-400 hover:scale-110 shadow-lg cursor-pointer"
             >
-              Télécharger mon CV
+              <Download /> Mon CV
+            </a>
+
+            <a
+              href="/d2c-thomas-cooper.pdf"
+              download
+              className="inline-flex items-center justify-center gap-2 px-8 w-fit py-4 bg-[#296297] text-white rounded-full font-semibold hover:bg-[#1F4D73] transition-transform duration-400 hover:scale-110 shadow-lg cursor-pointer"
+            >
+              <Download /> Mon Détail de compétence
             </a>
           </motion.div>
 
@@ -92,20 +99,22 @@ const HeroSection = () => {
             className="flex justify-center gap-6 mb-30"
           >
             <a
-              href="https://github.com"
-              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-110 text-gray-700 hover:text-blue-600"
+              href="https://github.com/thoms-17"
+              target="_blank"
+              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-110 text-gray-700 hover:text-[#296297]"
             >
               <Github size={24} />
             </a>
             <a
-              href="https://linkedin.com"
-              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-110 text-gray-700 hover:text-blue-600"
+              href="https://www.linkedin.com/in/thomas-cooper17"
+              target="_blank"
+              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-110 text-gray-700 hover:text-[#296297]"
             >
               <Linkedin size={24} />
             </a>
             <a
               href="mailto:contact@example.com"
-              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-110 text-gray-700 hover:text-blue-600"
+              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-110 text-gray-700 hover:text-[#296297]"
             >
               <Mail size={24} />
             </a>

@@ -7,7 +7,7 @@ const Layout = () => {
     <>
       <Navbar />
       <ScrollToTopButton />
-      <main className="pt-16">
+      <main>
         <section>
           <Outlet />
         </section>
