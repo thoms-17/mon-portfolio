@@ -35,15 +35,16 @@ const HeroSection = () => {
         >
           {/* Profile Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 2 }}
+            initial={{ opacity: 0, scale: 1.2 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-32 h-32 mx-auto mb-8 relative"
+            className="w-32 h-32 mx-auto mb-8 relative rounded-full border-4 border-[#296297] overflow-hidden hover:scale-110 transition-transform duration-400"
           >
-            <div className="w-full h-full bg-gradient-to-br from-[#296297] to-indigo-600 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-xl">
-              Thomas Cooper
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#296297] to-indigo-600 rounded-full animate-ping opacity-25"></div>
+            <img
+              src="/images/pp_pro.jpg"
+              alt="Thomas Cooper"
+              className="w-full h-full object-cover rounded-full"
+            />
           </motion.div>
 
           {/* Main Title */}
@@ -51,7 +52,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl md:text-7xl font-bold text-gray-800 mb-6"
+            className="text-5xl md:text-7xl font-bold text-gray-600 mb-6"
           >
             Développeur
             <span className="block text-[#296297]">Full Stack Junior</span>
@@ -101,20 +102,20 @@ const HeroSection = () => {
             <a
               href="https://github.com/thoms-17"
               target="_blank"
-              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-110 text-gray-700 hover:text-[#296297]"
+              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-400 hover:scale-120 text-[#296297] hover:text-white hover:bg-[#1F4D73]"
             >
               <Github size={24} />
             </a>
             <a
               href="https://www.linkedin.com/in/thomas-cooper17"
               target="_blank"
-              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-110 text-gray-700 hover:text-[#296297]"
+              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-400 hover:scale-120 text-[#296297] hover:text-white hover:bg-[#1F4D73]"
             >
               <Linkedin size={24} />
             </a>
             <a
               href="mailto:contact@example.com"
-              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-110 text-gray-700 hover:text-[#296297]"
+              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-400 hover:scale-120 text-[#296297] hover:text-white hover:bg-[#1F4D73]"
             >
               <Mail size={24} />
             </a>

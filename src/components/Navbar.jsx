@@ -32,7 +32,7 @@ const Navbar = () => {
   }, [isOpen]);
 
   const links = [
-    { href: "#about", label: "À propos" },
+    { href: "#experience", label: "Expériences" },
     { href: "#projects", label: "Projets" },
     { href: "#contact", label: "Contact" },
   ];
@@ -97,7 +97,7 @@ const Navbar = () => {
             {/* Close button */}
 
             {/* Menu items */}
-            <div className="w-full flex flex-col items-center space-y-4">
+            <div className="flex flex-col items-center space-y-4">
               {links.map(({ href, label }) => (
                 <a
                   key={href}
