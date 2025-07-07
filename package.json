@@ -1,5 +1,6 @@
 {
   "name": "mon-portfolio",
+  "homepage": "http://thoms-17.github.io/mon-portfolio/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,11 +8,14 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.10",
     "framer-motion": "^12.18.1",
+    "gh-pages": "^6.3.0",
     "keen-slider": "^6.8.6",
     "lucide-react": "^0.517.0",
     "react": "^19.1.0",
