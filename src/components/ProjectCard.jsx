@@ -1,47 +1,58 @@
-import { useState } from "react";
+import { Github, Download } from "lucide-react";
+import { motion } from "framer-motion";
 
-const ProjectCard = ({ title, image, description, github }) => {
-  const [flipped, setFlipped] = useState(false);
-
+const ProjectCard = ({
+  title,
+  image,
+  description,
+  github,
+  download,
+  onHoverStart,
+  onHoverEnd,
+}) => {
   return (
-    <div
-      className="w-[300px] h-[400px] cursor-pointer"
-      onClick={() => setFlipped(!flipped)}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true }}
+      onMouseEnter={onHoverStart}
+      onMouseLeave={onHoverEnd}
+      className="relative z-10 bg-white rounded-xl shadow-md overflow-hidden mt-5 mb-5 
+  w-[90vw] sm:w-[300px] md:w-[320px] lg:w-[280px] xl:w-[300px] flex-shrink-0
+  transform transition-transform duration-300 ease-in-out hover:scale-105"
     >
-      <div className="relative w-full h-full transition-transform duration-300 hover:scale-105 hover:shadow-xl rounded-xl">
-        {/* Effet 3D */}
-        <div
-          className={`relative w-full h-full duration-700 transform-style preserve-3d ${
-            flipped ? "rotate-y-180" : ""
-          }`}
-        >
-          {/* Recto */}
-          <div className="absolute inset-0 bg-white rounded-xl overflow-hidden backface-hidden">
-            <img src={image} alt={title} className="w-full h-60 object-cover" />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold text-blue-600">{title}</h3>
-              <p className="text-sm text-gray-500 mt-1">
-                Cliquez pour en savoir plus
-              </p>
-            </div>
-          </div>
-
-          {/* Verso */}
-          <div className="absolute inset-0 bg-white rounded-xl overflow-hidden p-4 rotate-y-180 backface-hidden">
-            <h3 className="text-lg font-bold text-blue-600">{title}</h3>
-            <p className="text-gray-700 text-sm mt-2 mb-4">{description}</p>
-            <a
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 text-sm underline"
-            >
-              Voir sur GitHub →
-            </a>
-          </div>
-        </div>
+      <div className="w-full aspect-[4/3] overflow-hidden rounded-t-xl">
+        <img src={image} alt={title} className="w-full h-full object-cover" />
       </div>
-    </div>
+
+      <div className="p-4 flex flex-col items-center text-center">
+        <h3 className="text-xl font-semibold text-[#296297]">{title}</h3>
+        <p className="text-gray-600 text-sm mt-2">{description}</p>
+
+        {/* Bouton conditionnel */}
+        {github && (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 p-3 bg-[#296297] rounded-full shadow-lg hover:shadow-xl transition-transform duration-400 hover:scale-120 text-white hover:text-white hover:bg-[#1F4D73]"
+          >
+            <Github size={24} />
+          </a>
+        )}
+
+        {download && (
+          <a
+            href={download}
+            download
+            className="mt-4 p-3 bg-[#296297] rounded-full shadow-lg hover:shadow-xl transition-transform duration-400 hover:scale-120 text-white hover:text-white hover:bg-[#1F4D73]"
+          >
+            <Download size={24} />
+          </a>
+        )}
+      </div>
+    </motion.div>
   );
 };
 
