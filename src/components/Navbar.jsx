@@ -44,11 +44,11 @@ const Navbar = () => {
           scrolled ? "bg-white/20 backdrop-blur-md shadow-md" : "bg-transparent"
         }`}
       >
-        <div className="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
+        <div className="max-w-5xl mx-auto px- py-3 flex justify-between items-center">
           {/* Logo */}
           <a
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-xl font-bold text-[#296297] hover:text-[#1F4D73] inline-block transform transition-transform duration-300 hover:scale-112 cursor-pointer"
+            className="text-2xl font-bold text-[#296297] hover:text-[#1F4D73] inline-block transform transition-transform duration-300 hover:scale-115 cursor-pointer ml-4"
           >
             Thomas COOPER
           </a>
@@ -70,7 +70,7 @@ const Navbar = () => {
           <button
             ref={buttonRef}
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden rounded-lg px-4 py-2 text-base font-medium bg-[#296297] text-white cursor-pointer transition duration-300 hover:bg-[#1e4c73] focus:outline-none"
+            className="md:hidden rounded-lg px-4 py-2 text-base font-medium bg-[#296297] text-white cursor-pointer transition duration-300 hover:bg-[#1e4c73] focus:outline-none mr-4"
           >
             <motion.div
               initial={false}
