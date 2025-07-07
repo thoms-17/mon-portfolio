@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
+import SocialButton from "../components/SocialButton";
 
 const HeroSection = () => {
   return (
@@ -99,26 +100,12 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 1 }}
             className="flex justify-center gap-6 mb-30"
           >
-            <a
-              href="https://github.com/thoms-17"
-              target="_blank"
-              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-400 hover:scale-120 text-[#296297] hover:text-white hover:bg-[#1F4D73]"
-            >
-              <Github size={24} />
-            </a>
-            <a
+            <SocialButton type="github" href="https://github.com/thoms-17" />
+            <SocialButton
+              type="linkedin"
               href="https://www.linkedin.com/in/thomas-cooper17"
-              target="_blank"
-              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-400 hover:scale-120 text-[#296297] hover:text-white hover:bg-[#1F4D73]"
-            >
-              <Linkedin size={24} />
-            </a>
-            <a
-              href="mailto:contact@example.com"
-              className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-400 hover:scale-120 text-[#296297] hover:text-white hover:bg-[#1F4D73]"
-            >
-              <Mail size={24} />
-            </a>
+            />
+            <SocialButton type="mail" href="mailto:thomcooper04@gmail.com" />
           </motion.div>
         </motion.div>
 
