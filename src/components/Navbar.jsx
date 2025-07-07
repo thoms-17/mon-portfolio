@@ -50,7 +50,7 @@ const Navbar = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="text-xl font-bold text-[#296297] hover:text-[#1F4D73] inline-block transform transition-transform duration-300 hover:scale-112 cursor-pointer"
           >
-            Mon Portfolio
+            Thomas COOPER
           </a>
 
           {/* Desktop Menu */}
