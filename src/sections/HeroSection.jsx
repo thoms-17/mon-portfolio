@@ -42,7 +42,7 @@ const HeroSection = () => {
             className="w-32 h-32 mx-auto mb-8 relative rounded-full border-4 border-[#296297] overflow-hidden hover:scale-110 transition-transform duration-400"
           >
             <img
-              src="/images/pp_pro.jpg"
+              src={`${import.meta.env.BASE_URL}images/pp_pro.jpg`}
               alt="Thomas Cooper"
               className="w-full h-full object-cover rounded-full"
             />

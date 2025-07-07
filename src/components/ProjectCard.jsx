@@ -23,7 +23,11 @@ const ProjectCard = ({
   transform duration-300 hover:scale-105"
     >
       <div className="w-full aspect-[4/3] overflow-hidden rounded-t-xl">
-        <img src={image} alt={title} className="w-full h-full object-cover" />
+        <img
+          src={`${import.meta.env.BASE_URL}${image.replace(/^\//, "")}`}
+          alt={title}
+          className="w-full h-full object-cover"
+        />
       </div>
 
       <div className="p-4 flex flex-col items-center text-center">
