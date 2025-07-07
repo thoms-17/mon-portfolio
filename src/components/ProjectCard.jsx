@@ -20,7 +20,7 @@ const ProjectCard = ({
       onMouseLeave={onHoverEnd}
       className="relative z-10 bg-white rounded-xl shadow-md overflow-hidden mt-5 mb-5 
   w-[90vw] sm:w-[300px] md:w-[320px] lg:w-[280px] xl:w-[300px] flex-shrink-0
-  transform transition-transform duration-300 ease-in-out hover:scale-105"
+  transform duration-300 hover:scale-105"
     >
       <div className="w-full aspect-[4/3] overflow-hidden rounded-t-xl">
         <img src={image} alt={title} className="w-full h-full object-cover" />
