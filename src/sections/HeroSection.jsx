@@ -27,7 +27,7 @@ const HeroSection = () => {
         <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-indigo-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse delay-500"></div>
       </div>
 
-      <div className="px-4 text-center relative z-10">
+      <div className="px-4 text-center relative z-10 mt-15 sm:mt-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl md:text-7xl font-bold text-gray-600 mb-6"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-600 mb-6"
           >
             Développeur
             <span className="block text-[#296297]">Full Stack Junior</span>
@@ -64,7 +64,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
             Passionné par le Web, le Big Data & l'Intelligence Artificielle
           </motion.p>
@@ -74,7 +74,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center mb-12"
+            className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center mb-4 sm:mb-12"
           >
             <a
               href="/cv-thomas-cooper.pdf"
@@ -98,7 +98,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="flex justify-center gap-6 mb-30"
+            className="flex justify-center gap-10 mb-25"
           >
             <SocialButton type="github" href="https://github.com/thoms-17" />
             <SocialButton
