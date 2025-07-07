@@ -2,11 +2,10 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [tailwindcss(), react()],
-  base: "/mon-portfolio/",
-  build: {
-    outDir: "docs",
-  },
+// https://vitejs.dev/config/
+export default defineConfig(({ command, mode }) => {
+  return {
+    plugins: [tailwindcss(), react()],
+    base: command === "serve" ? "/" : "/mon-portfolio/",
+  };
 });
