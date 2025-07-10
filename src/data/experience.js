@@ -3,7 +3,7 @@ export const timelineItems = [
     year: "Depuis Mai 2025",
     title: "Développeur Web & IA Bénévole",
     description:
-      "Développement back-end du site de l’association avec PHP / Symfony (architecture MVC, routing, ORM). Amélioration du chatbot assistant via Copilot Studio",
+      "Développement et maintenance du site de l’association avec PHP / Symfony. Amélioration du chatbot assistant via Copilot Studio",
     iconType: "code",
   },
   {
@@ -17,26 +17,27 @@ export const timelineItems = [
     year: "2024",
     title: "Master Dev. Big Data & IA",
     description:
-      "Ecole IPSSI Montévrain – Formation en développement web full-stack, big data et intelligence artificielle. Mémoire de recherche : « L'optimisation des diagnostics médicaux par l'intelligence artificielle. ».",
+      "Ecole IPSSI (Montévrain) – Formation en développement web full-stack, big data et intelligence artificielle. Mémoire de recherche de fin d'études : « L'optimisation des diagnostics médicaux par l'intelligence artificielle ».",
     iconType: "graduation",
   },
   {
     year: "2022",
     title: "Bachelor Ingénierie du Web",
     description:
-      "Ecole ESGI Paris – Formation en développement web full-stack, gestion de projet et UX/UI design. Projet Annuel : Création d'un CMS au format MVC from scratch en PHP.",
+      "Ecole ESGI (Paris) – Formation en développement web full-stack, gestion de projet et UX/UI design. Projet Annuel : Création d'un CMS au format MVC from scratch en PHP.",
     iconType: "graduation",
   },
   {
     year: "2021",
-    title: "BTS SIO Option SLAM",
-    description: "Ecole IPSSI Montévrain – Formation en développement web et mobile.",
+    title: "BTS Services Informatiques aux Organisations Option SLAM",
+    description:
+      "Ecole IPSSI (Montévrain) – Formation en développement web et mobile.",
     iconType: "graduation",
   },
   {
     year: "2019",
     title: "Baccalauréat Scientifique",
-    description: "Lycée Van Dongen, Lagny-sur-Marne",
+    description: "Lycée Van Dongen (Lagny-sur-Marne)",
     iconType: "graduation",
-  }
+  },
 ];

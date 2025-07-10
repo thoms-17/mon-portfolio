@@ -33,9 +33,15 @@ const AboutSection = () => {
           viewport={{ once: true }}
           className="text-gray-700 leading-relaxed text-justify mb-12"
         >
-          Je suis un développeur web passionné par la création d’expériences
-          utilisateurs simples, modernes et efficaces. Voici un aperçu de mon
-          parcours :
+          Tout au long de mon parcours, j'ai acquis de solides expériences tant
+          en développement front-end que back-end, lors de mon alternance ainsi
+          que mes projets personnels.
+          <br />
+          J'ai également une bonne compréhension des enjeux éthiques, sociaux et
+          technologiques liés à l'Intelligence artificielle. L'approfondissement
+          de l'impact de l'utilisation de l'intelligence artificielle à travers
+          mon mémoire de fin d'études m'a permis de mieux comprendre ses enjeux
+          dans le milieu médical.
         </motion.p>
 
         {/* Timeline */}

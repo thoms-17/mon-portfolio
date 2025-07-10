@@ -66,7 +66,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            Passionné par le Web, le Big Data & l'Intelligence Artificielle
+            Jeune diplômé en développement Web, Big Data & Intelligence Artificielle
           </motion.p>
 
           {/* CTA Buttons */}
@@ -77,7 +77,7 @@ const HeroSection = () => {
             className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center mb-4 sm:mb-12"
           >
             <a
-              href="/cv-thomas-cooper.pdf"
+              href={`${import.meta.env.BASE_URL}cv-thomas-cooper.pdf`}
               download
               className="inline-flex items-center justify-center gap-2 px-8 w-fit py-4 bg-[#296297] text-white rounded-full font-semibold hover:bg-[#1F4D73] transition-transform duration-400 hover:scale-110 shadow-lg cursor-pointer"
             >
@@ -85,7 +85,7 @@ const HeroSection = () => {
             </a>
 
             <a
-              href="/d2c-thomas-cooper.pdf"
+              href={`${import.meta.env.BASE_URL}d2c-thomas-cooper.pdf`}
               download
               className="inline-flex items-center justify-center gap-2 px-8 w-fit py-4 bg-[#296297] text-white rounded-full font-semibold hover:bg-[#1F4D73] transition-transform duration-400 hover:scale-110 shadow-lg cursor-pointer"
             >
