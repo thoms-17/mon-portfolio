@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ProjectCard from "../components/ProjectCard";
+import TechMarquee  from "../components/TechMarquee";
 import { projects } from "../data/projects";
 import { motion } from "framer-motion";
 
@@ -154,6 +155,7 @@ const ProjectsSection = () => {
           </div>
         </div>
       </div>
+      <TechMarquee />
     </section>
   );
 };
