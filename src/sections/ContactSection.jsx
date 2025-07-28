@@ -23,7 +23,7 @@ const ContactSection = () => {
       </motion.h2>
 
       <motion.p {...fadeInUp} className="mb-8 text-white">
-        Je suis à votre disposition via les canaux suivants :
+        Voici les canaux sur lesquels vous pouvez me contacter :
       </motion.p>
 
       <motion.div
