@@ -44,7 +44,7 @@ const HeroSection = () => {
             <img
               src={`${import.meta.env.BASE_URL}images/pp_pro.jpg`}
               alt="Thomas Cooper"
-              className="w-full h-full object-cover rounded-full"
+              className="w-full h-full object-cover object-[5px_-20px] scale-120 rounded-full"
             />
           </motion.div>
 
