@@ -48,7 +48,7 @@ const ProjectCard = ({
 
         {download && (
           <a
-            href={download}
+            href={`${import.meta.env.BASE_URL}${download.replace(/^\//, "")}`}
             download
             className="mt-4 p-3 bg-[#296297] rounded-full shadow-lg hover:shadow-xl transition-transform duration-400 hover:scale-120 text-white hover:text-white hover:bg-[#1F4D73]"
           >
