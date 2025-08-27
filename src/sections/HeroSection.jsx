@@ -56,7 +56,7 @@ const HeroSection = () => {
             className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-gray-600 mb-6"
           >
             Développeur
-            <span className="block text-[#296297]">Full Stack Junior</span>
+            <span className="block text-[#296297]">Full Stack</span>
           </motion.h1>
 
           {/* Subtitle */}
