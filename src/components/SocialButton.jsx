@@ -7,16 +7,16 @@ const icons = {
   mail: Mail,
 };
 
-const SocialButton = ({ type, href, label = null }) => {
+const SocialButton = ({ type, href, label = null, isExternal = type !== "mail" }) => {
   const Icon = icons[type];
 
   return (
     <div className="flex flex-col items-center gap-2">
       <a
         href={href}
-        target={type !== "mail" ? "_blank" : undefined}
-        rel={type !== "mail" ? "noopener noreferrer" : undefined}
-        className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-400 hover:scale-120 text-[#296297] hover:text-white hover:bg-[#1F4D73]"
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        className="p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-transform duration-400 hover:scale-110 text-[#296297] hover:text-white hover:bg-[#1F4D73]"
       >
         <Icon size={24} />
       </a>

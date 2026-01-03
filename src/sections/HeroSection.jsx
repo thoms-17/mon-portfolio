@@ -27,7 +27,7 @@ const HeroSection = () => {
         <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-indigo-100 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse delay-500"></div>
       </div>
 
-      <div className="px-4 text-center relative z-10 mt-15 sm:mt-0">
+      <div className="px-4 text-center relative z-10 mt-16 sm:mt-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ const HeroSection = () => {
             <img
               src={`${import.meta.env.BASE_URL}images/pp_pro.jpg`}
               alt="Thomas Cooper"
-              className="w-full h-full object-cover object-[5px_-20px] scale-120 rounded-full"
+              className="w-full h-full object-cover object-[5px_-20px] scale-110 rounded-full"
             />
           </motion.div>
 
@@ -98,7 +98,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="flex justify-center gap-10 mb-25"
+            className="flex justify-center gap-10 mb-24"
           >
             <SocialButton type="github" href="https://github.com/thoms-17" />
             <SocialButton

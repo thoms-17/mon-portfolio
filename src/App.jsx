@@ -3,10 +3,9 @@ import Home from "./pages/Home";
 
 function App() {
   return (
-    <>
-      <Layout />
+    <Layout>
       <Home />
-    </>
+    </Layout>
   );
 }
 

@@ -1,16 +1,13 @@
-import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
       <ScrollToTopButton />
       <main>
-        <section>
-          <Outlet />
-        </section>
+        <section>{children}</section>
       </main>
     </>
   );

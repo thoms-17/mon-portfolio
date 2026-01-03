@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ProjectCard from "../components/ProjectCard";
 import TechMarquee  from "../components/TechMarquee";
@@ -48,8 +48,10 @@ const ProjectsSection = () => {
   };
 
   const [chunkSize, setChunkSize] = useState(3);
-
-  const slides = chunkProjects(projects, chunkSize);
+  const slides = useMemo(
+    () => chunkProjects(projects, chunkSize),
+    [chunkSize]
+  );
 
   const timeoutRef = useRef(null);
 

@@ -44,11 +44,11 @@ const Navbar = () => {
           scrolled ? "bg-white/20 backdrop-blur-md shadow-md" : "bg-transparent"
         }`}
       >
-        <div className="max-w-5xl mx-auto px- py-3 flex justify-between items-center">
+        <div className="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
           {/* Logo */}
           <a
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-2xl font-bold text-[#296297] hover:text-[#1F4D73] inline-block transform transition-transform duration-300 hover:scale-115 cursor-pointer ml-4"
+            className="text-2xl font-bold text-[#296297] hover:text-[#1F4D73] inline-block transform transition-transform duration-300 hover:scale-110 cursor-pointer ml-4"
           >
             Thomas COOPER
           </a>

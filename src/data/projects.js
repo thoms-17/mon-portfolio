@@ -25,6 +25,7 @@ export const projects = [
     title: "Pokédex",
     image: "/images/pokeball.png",
     description: "Gestion du back-end, notamment des routes d'une application Pokédex avec Node.js et Express.",
-    github: "https://github.com/thoms-17/tp-pokemon-back",
+    github: "https://github.com/thoms-17/pokedex",
+    redirect: "https://thoms-17.github.io/pokedex/",
   }
 ];

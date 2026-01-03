@@ -1,4 +1,4 @@
-import { Github, Download } from "lucide-react";
+import { Github, Download, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
 const ProjectCard = ({
@@ -7,6 +7,7 @@ const ProjectCard = ({
   description,
   github,
   download,
+  redirect,
   onHoverStart,
   onHoverEnd,
 }) => {
@@ -34,26 +35,41 @@ const ProjectCard = ({
         <h3 className="text-xl font-semibold text-[#296297]">{title}</h3>
         <p className="text-gray-600 text-sm mt-2">{description}</p>
 
-        {/* Bouton conditionnel */}
-        {github && (
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 p-3 bg-[#296297] rounded-full shadow-lg hover:shadow-xl transition-transform duration-400 hover:scale-120 text-white hover:text-white hover:bg-[#1F4D73]"
-          >
-            <Github size={24} />
-          </a>
-        )}
+        {/* Boutons conditionnels */}
+        {(github || download || redirect) && (
+          <div className="mt-4 flex flex-row items-center justify-center gap-3">
+            {github && (
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-[#296297] rounded-full shadow-lg hover:shadow-xl transition-transform duration-400 hover:scale-110 text-white hover:text-white hover:bg-[#1F4D73]"
+              >
+                <Github size={24} />
+              </a>
+            )}
 
-        {download && (
-          <a
-            href={`${import.meta.env.BASE_URL}${download.replace(/^\//, "")}`}
-            download
-            className="mt-4 p-3 bg-[#296297] rounded-full shadow-lg hover:shadow-xl transition-transform duration-400 hover:scale-120 text-white hover:text-white hover:bg-[#1F4D73]"
-          >
-            <Download size={24} />
-          </a>
+            {download && (
+              <a
+                href={`${import.meta.env.BASE_URL}${download.replace(/^\//, "")}`}
+                download
+                className="p-3 bg-[#296297] rounded-full shadow-lg hover:shadow-xl transition-transform duration-400 hover:scale-110 text-white hover:text-white hover:bg-[#1F4D73]"
+              >
+                <Download size={24} />
+              </a>
+            )}
+
+            {redirect && (
+              <a
+                href={redirect}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-[#296297] rounded-full shadow-lg hover:shadow-xl transition-transform duration-400 hover:scale-110 text-white hover:text-white hover:bg-[#1F4D73]"
+              >
+                <ExternalLink size={24} />
+              </a>
+            )}
+          </div>
         )}
       </div>
     </motion.div>
