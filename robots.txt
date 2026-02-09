@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://thoms-17.github.io/mon-portfolio/sitemap.xml
