@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 const ScrollToTopButton = () => {
   const [visible, setVisible] = useState(false);
 
-  // Affiche le bouton si on a scrollé vers le bas
   useEffect(() => {
     const toggleVisibility = () => {
       setVisible(window.scrollY > 300);
@@ -22,7 +21,7 @@ const ScrollToTopButton = () => {
       onClick={scrollToTop}
       className={`fixed bottom-6 right-6 p-3 rounded-full bg-[#296297] text-white shadow-lg transition-all hover:scale-125  duration-500 z-50 cursor-pointer ${
         visible ? "opacity-100" : "opacity-0 pointer-events-none"
-      } `} // masque sur desktop
+      } `}
       aria-label="Remonter en haut"
     >
       <ArrowUp size={24} />

@@ -1,5 +1,12 @@
 export const timelineItems = [
   {
+    year: "Depuis Novembre 2025",
+    title: "Développeur Fullstack Freelance",
+    description:
+      "Développement d'applications SaaS sur mesure pour les clients. Stack : React, Laravel (PHP). Conception d'architectures logicielles évolutives et sécurisées.",
+    iconType: "code",
+  },
+  {
     year: "Depuis Mai 2025",
     title: "Développeur Web & IA Bénévole",
     description:

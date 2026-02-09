@@ -40,7 +40,6 @@ const logos = [
 ];
 
 const Marquee = () => {
-  // Juste un sens unique ici, mais tu peux dupliquer et inverser si tu veux deux lignes opposées
   return (
     <div className="container mx-auto overflow-hidden py-6 mt-10">
       <MarqueeItem images={logos} from={0} to={"-100%"} />

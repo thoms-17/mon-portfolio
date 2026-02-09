@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useClickOutside } from "../hooks/useClickOutside";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -9,27 +10,13 @@ const Navbar = () => {
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
 
+  useClickOutside([menuRef, buttonRef], () => setIsOpen(false), isOpen);
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (
-        isOpen &&
-        menuRef.current &&
-        !menuRef.current.contains(e.target) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(e.target)
-      ) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isOpen]);
 
   const links = [
     { href: "#experience", label: "Expériences" },
@@ -45,7 +32,6 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
-          {/* Logo */}
           <a
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="text-2xl font-bold text-[#296297] hover:text-[#1F4D73] inline-block transform transition-transform duration-300 hover:scale-110 cursor-pointer ml-4"
@@ -53,7 +39,6 @@ const Navbar = () => {
             Thomas COOPER
           </a>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex space-x-4 text-sm font-medium">
             {links.map(({ href, label }) => (
               <a
@@ -66,7 +51,6 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Burger Button (Mobile) */}
           <button
             ref={buttonRef}
             onClick={() => setIsOpen(!isOpen)}
@@ -83,7 +67,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Side Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.aside
@@ -94,9 +77,6 @@ const Navbar = () => {
             transition={{ type: "tween", duration: 0.4 }}
             className="fixed top-16 right-4 w-64 bg-white/70 backdrop-blur-lg shadow-xl rounded-xl p-6 flex flex-col space-y-4 z-40"
           >
-            {/* Close button */}
-
-            {/* Menu items */}
             <div className="flex flex-col items-center space-y-4">
               {links.map(({ href, label }) => (
                 <a

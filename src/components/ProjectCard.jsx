@@ -35,7 +35,6 @@ const ProjectCard = ({
         <h3 className="text-xl font-semibold text-[#296297]">{title}</h3>
         <p className="text-gray-600 text-sm mt-2">{description}</p>
 
-        {/* Boutons conditionnels */}
         {(github || download || redirect) && (
           <div className="mt-4 flex flex-row items-center justify-center gap-3">
             {github && (

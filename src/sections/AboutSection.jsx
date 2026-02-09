@@ -14,7 +14,6 @@ const AboutSection = () => {
       className="min-h-screen bg-white flex flex-col items-center justify-start px-4 py-24 w-full"
     >
       <div className="max-w-3xl w-full">
-        {/* Titre */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,7 +24,6 @@ const AboutSection = () => {
           Expériences
         </motion.h2>
 
-        {/* Paragraphe introductif */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +42,6 @@ const AboutSection = () => {
           dans le milieu médical.
         </motion.p>
 
-        {/* Timeline */}
         <div className="relative border-l-4 border-[#296297] pl-6 space-y-12">
           {timelineItems.map((item, index) => {
             const Icon = iconMap[item.iconType];
@@ -58,10 +55,8 @@ const AboutSection = () => {
                 viewport={{ once: true }}
                 className="relative"
               >
-                {/* Point de la timeline */}
                 <div className="absolute -left-9 top-1 w-5 h-5 bg-[#296297] rounded-full border-4 border-white"></div>
 
-                {/* Contenu */}
                 <h3 className="text-lg font-semibold text-[#296297] flex items-center gap-2">
                   {Icon && <Icon className="w-5 h-5 text-[#296297]" />}
                   <span>
