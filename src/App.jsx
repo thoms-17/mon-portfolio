@@ -1,11 +1,15 @@
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
+import SEO from "./components/SEO";
 
 function App() {
   return (
-    <Layout>
-      <Home />
-    </Layout>
+    <>
+      <SEO />
+      <Layout>
+        <Home />
+      </Layout>
+    </>
   );
 }
 
