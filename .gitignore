@@ -12,8 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Environment variables (API keys, secrets)
+.env
+.env.local
+.env.*.local
+
 # Personal documentation
-GIT_WORKFLOW.md
 SEO_GUIDE.md
 
 # Editor directories and files
