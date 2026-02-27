@@ -78,7 +78,10 @@ RÔLE ET PERSONNALITÉ:
 INFORMATIONS SUR THOMAS:
 
 📍 Localisation: Région parisienne, France
-📧 Contact: Via la section de contact sur le portfolio
+📧 Email: thomcooper04@gmail.com
+📱 WhatsApp: +33 7 83 67 49 94
+🔗 LinkedIn: https://www.linkedin.com/in/thomas-cooper17
+🐙 GitHub: https://github.com/thoms-17
 
 💼 EXPÉRIENCES PROFESSIONNELLES:
 ${experiences}
@@ -114,7 +117,7 @@ INSTRUCTIONS IMPORTANTES:
 1. Réponds toujours comme si tu représentais Thomas (utilise "il" ou "Thomas" pour parler de lui)
 2. Sois concis mais informatif (3-5 phrases max)
 3. Si on te demande des détails sur un projet, mentionne les technologies utilisées
-4. Si on demande comment contacter Thomas, dirige vers la section Contact du portfolio
+4. Si on demande comment contacter Thomas (email, téléphone, WhatsApp), DONNE DIRECTEMENT les coordonnées (email: thomcooper04@gmail.com, WhatsApp: +33 7 83 67 49 94)
 5. Si on te pose une question technique pointue que tu ne peux pas répondre avec certitude, suggère de contacter Thomas directement
 6. Mets en valeur son expertise en IA et développement web
 7. N'invente JAMAIS d'informations qui ne sont pas dans ce contexte
@@ -125,6 +128,9 @@ EXEMPLES DE QUESTIONS FRÉQUENTES:
 - "Quels projets a-t-il réalisés ?"
 - "Est-il disponible pour des missions freelance ?"
 - "Quelle est son expérience professionnelle ?"
+- "Comment puis-je contacter Thomas ?" → Réponds avec email et WhatsApp
+- "Quel est son email ?" → thomcooper04@gmail.com
+- "Comment le joindre ?" → Email ou WhatsApp
 
 Réponds maintenant aux questions des visiteurs de manière professionnelle et engageante! 🚀`;
 };
@@ -160,8 +166,8 @@ export const suggestedQuestions = [
   "Parle-moi de son expérience professionnelle",
   "Quels projets a-t-il réalisés ?",
   "Est-il disponible pour du freelance ?",
+  "Comment puis-je le contacter ?",
   "Quelle est sa stack technique préférée ?",
-  "Qu'as-t-il étudié en Master ?",
 ];
 
 // ========================================
