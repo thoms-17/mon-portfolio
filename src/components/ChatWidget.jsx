@@ -36,6 +36,43 @@ import {
 } from '../data/chatbotContext';
 
 // ========================================
+// COMPOSANT TYPEWRITER (effet de frappe)
+// ========================================
+
+/**
+ * Composant qui affiche du texte progressivement, caractère par caractère
+ * Simule l'effet d'écriture en temps réel comme ChatGPT
+ */
+const TypewriterText = ({ text, speed = 20 }) => {
+  const [displayedText, setDisplayedText] = useState('');
+  const [isTyping, setIsTyping] = useState(true);
+
+  useEffect(() => {
+    setDisplayedText(''); // Réinitialiser
+    setIsTyping(true);
+    let currentIndex = 0;
+
+    const interval = setInterval(() => {
+      if (currentIndex < text.length) {
+        setDisplayedText(text.slice(0, currentIndex + 1));
+        currentIndex++;
+      } else {
+        setIsTyping(false);
+        clearInterval(interval);
+      }
+    }, speed);
+
+    return () => clearInterval(interval);
+  }, [text, speed]);
+
+  return (
+    <span>
+      {displayedText}
+    </span>
+  );
+};
+
+// ========================================
 // COMPOSANT PRINCIPAL
 // ========================================
 
@@ -77,7 +114,7 @@ const ChatWidget = () => {
   // Référence au bas de la zone de messages (pour auto-scroll)
   const messagesEndRef = useRef(null);
   
-  // Référence à l'input de texte (pour focus automatique)
+  // Référence au textarea (pour focus automatique et auto-resize)
   const inputRef = useRef(null);
 
   // ========================================
@@ -111,12 +148,23 @@ const ChatWidget = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]); // Se déclenche quand messages change
 
-  // EFFET 3 : Focus automatique sur l'input quand le chat s'ouvre
+  // EFFET 3 : Focus automatique sur le textarea quand le chat s'ouvre
   useEffect(() => {
     if (isOpen && inputRef.current) {
-      inputRef.current.focus(); // Met le curseur dans l'input
+      inputRef.current.focus(); // Met le curseur dans le textarea
     }
   }, [isOpen]); // Se déclenche quand isOpen change
+
+  // EFFET 4 : Auto-resize du textarea en fonction du contenu
+  useEffect(() => {
+    if (inputRef.current) {
+      // Réinitialiser la hauteur pour calculer la nouvelle
+      inputRef.current.style.height = 'auto';
+      // Ajuster la hauteur au contenu (max 150px)
+      const newHeight = Math.min(inputRef.current.scrollHeight, 150);
+      inputRef.current.style.height = `${newHeight}px`;
+    }
+  }, [inputValue]); // Se déclenche quand inputValue change
 
   // ========================================
   // FONCTIONS MÉTIER (Business Logic)
@@ -206,6 +254,18 @@ const ChatWidget = () => {
   };
 
   /**
+   * ⌨️ Gère l'appui sur Entrée dans le textarea
+   * Entrée seule = envoyer le message
+   * Shift+Entrée = nouvelle ligne
+   */
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault(); // Empêche le saut de ligne
+      handleSubmit(e);
+    }
+  };
+
+  /**
    * 💡 Gère le clic sur une question suggérée
    */
   const handleSuggestedQuestion = (question) => {
@@ -240,7 +300,7 @@ const ChatWidget = () => {
       
       <motion.button
         onClick={() => setIsOpen(!isOpen)} // Toggle : inverse true/false
-        className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-shadow"
+        className="fixed bottom-6 left-6 z-50 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-shadow"
         whileHover={{ scale: 1.05 }} // Animation au survol : agrandir de 5%
         whileTap={{ scale: 0.95 }}   // Animation au clic : rétrécir de 5%
         aria-label={isOpen ? 'Fermer le chat' : 'Ouvrir le chat'} // Accessibilité
@@ -287,7 +347,7 @@ const ChatWidget = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 right-6 z-50 w-96 max-w-[calc(100vw-3rem)] h-[600px] max-h-[calc(100vh-8rem)] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-200 dark:border-gray-700"
+            className="fixed bottom-24 left-6 z-50 w-96 max-w-[calc(100vw-3rem)] h-[600px] max-h-[calc(100vh-8rem)] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-200 dark:border-gray-700"
           >
             {/* HEADER */}
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 flex items-center justify-between">
@@ -326,7 +386,13 @@ const ChatWidget = () => {
                         : 'bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm'
                     }`}
                   >
-                    <p className="text-sm whitespace-pre-wrap break-words">{msg.message}</p>
+                    <p className="text-sm whitespace-pre-wrap break-words">
+                      {msg.role === 'bot' && !msg.isError && index === messages.length - 1 ? (
+                        <TypewriterText text={msg.message} speed={27} />
+                      ) : (
+                        msg.message
+                      )}
+                    </p>
                     <span className="text-xs opacity-60 mt-1 block">
                       {new Date(msg.timestamp).toLocaleTimeString('fr-FR', { 
                         hour: '2-digit', 
@@ -375,25 +441,27 @@ const ChatWidget = () => {
 
             {/* INPUT DE SAISIE */}
             <form onSubmit={handleSubmit} className="p-4 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-              <div className="flex items-center gap-2">
-                <input
+              <div className="flex items-end gap-2">
+                <textarea
                   ref={inputRef}
-                  type="text"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
+                  onKeyDown={handleKeyDown}
                   placeholder="Posez votre question..."
-                  className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white text-sm"
+                  className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white text-sm resize-none overflow-y-auto min-h-[40px] max-h-[150px]"
                   disabled={isLoading}
+                  rows={1}
                 />
                 <button
                   type="submit"
                   disabled={!inputValue.trim() || isLoading}
-                  className="bg-blue-600 text-white rounded-full p-2 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="bg-blue-600 text-white rounded-full p-2 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex-shrink-0"
                   aria-label="Envoyer le message"
                 >
                   <Send size={20} />
                 </button>
               </div>
+              <p className="text-xs text-gray-400 dark:text-gray-500 mt-1.5 ml-1">💡 Astuce : Shift+Entrée pour une nouvelle ligne</p>
             </form>
           </motion.div>
         )}
