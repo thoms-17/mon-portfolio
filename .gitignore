@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Personal documentation
+GIT_WORKFLOW.md
+SEO_GUIDE.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
