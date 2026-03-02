@@ -27,6 +27,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 // Notre service API
 import { sendMessageToGemini } from '../services/geminiService';
 
+// Hook personnalisé pour détecter les clics en dehors
+import { useClickOutside } from '../hooks/useClickOutside';
+
 // Notre base de connaissances
 import { 
   buildChatbotContext, 
@@ -116,6 +119,9 @@ const ChatWidget = () => {
   
   // Référence au textarea (pour focus automatique et auto-resize)
   const inputRef = useRef(null);
+  
+  // Référence à la fenêtre de chat (pour détecter les clics en dehors)
+  const chatWindowRef = useRef(null);
 
   // ========================================
   // EFFETS (Effects)
@@ -165,6 +171,13 @@ const ChatWidget = () => {
       inputRef.current.style.height = `${newHeight}px`;
     }
   }, [inputValue]); // Se déclenche quand inputValue change
+
+  // EFFET 5 : Fermer le chat si clic en dehors
+  useClickOutside(
+    [chatWindowRef], // Références à surveiller
+    () => setIsOpen(false), // Callback : fermer le chat
+    isOpen // Actif uniquement si le chat est ouvert
+  );
 
   // ========================================
   // FONCTIONS MÉTIER (Business Logic)
@@ -343,6 +356,7 @@ const ChatWidget = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            ref={chatWindowRef}
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
