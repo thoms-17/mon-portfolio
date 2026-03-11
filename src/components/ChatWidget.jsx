@@ -1,6 +1,25 @@
 /**
  * 💬 COMPOSANT CHATWIDGET - Interface utilisateur du chatbot IA
  * 
+ * ⚠️ STATUT : TEMPORAIREMENT DÉSACTIVÉ EN PRODUCTION
+ * 
+ * RAISON :
+ * - Google Gemini détecte la clé API comme "leaked" malgré les restrictions de domaine
+ * - Les variables VITE_* sont obligatoirement exposées dans le bundle frontend (dist/assets/)
+ * - Impossible de cacher la clé avec GitHub Pages (hosting statique uniquement)
+ * 
+ * SOLUTION FUTURE :
+ * - Migrer vers Vercel/Netlify avec backend proxy serverless
+ * - La clé sera cachée côté serveur, le frontend appellera le proxy
+ * 
+ * CODE CONSERVÉ :
+ * - Toute l'implémentation reste intacte pour référence
+ * - Intégration Google Gemini 2.5 Flash fonctionnelle
+ * - Effet typewriter, auto-resize textarea, contexte intelligent
+ * - Pour réactiver : Décommenter dans src/layout/Layout.jsx
+ * 
+ * ========================================
+ * 
  * Ce composant React affiche le chatbot sous forme de widget flottant.
  * Il gère toute l'interface : bouton, fenêtre de chat, messages, input, animations.
  * 
