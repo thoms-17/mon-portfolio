@@ -4,7 +4,7 @@ import { animations } from "../constants/theme";
 
 const ContactSection = () => {
   return (
-    <section
+    <footer
       id="contact"
       className="mx-auto p-6 text-center bg-[#296297] w-full"
     >
@@ -41,7 +41,7 @@ const ContactSection = () => {
           label="WhatsApp"
         />
       </motion.div>
-    </section>
+    </footer>
   );
 };
 

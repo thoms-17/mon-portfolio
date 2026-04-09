@@ -9,11 +9,13 @@ import ScrollToTopButton from "../components/ScrollToTopButton";
 const Layout = ({ children }) => {
   return (
     <>
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
       <ScrollToTopButton />
       {/* <ChatWidget /> */}
       <main>
-        <section>{children}</section>
+        {children}
       </main>
     </>
   );

@@ -26,9 +26,12 @@ const HeroSection = () => {
           >
             <img
               src={`${import.meta.env.BASE_URL}images/pp_pro.jpg`}
-              alt="Thomas Cooper"
+              alt="Thomas Cooper - Développeur Full Stack Freelance"
               className="w-full h-full object-cover object-[5px_-20px] rounded-full"
               style={{ transform: "scale(-1.1, 1.1)" }}
+              width="128"
+              height="128"
+              fetchpriority="high"
             />
           </motion.div>
 

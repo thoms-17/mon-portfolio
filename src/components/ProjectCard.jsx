@@ -28,6 +28,9 @@ const ProjectCard = ({
           src={`${import.meta.env.BASE_URL}${image.replace(/^\//, "")}`}
           alt={title}
           className="w-full h-full object-cover"
+          width="300"
+          height="225"
+          loading="lazy"
         />
       </div>
 

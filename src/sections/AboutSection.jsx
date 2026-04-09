@@ -47,7 +47,7 @@ const AboutSection = () => {
             const Icon = iconMap[item.iconType];
 
             return (
-              <motion.div
+              <motion.article
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -65,7 +65,7 @@ const AboutSection = () => {
                 </h3>
 
                 <p className="text-gray-600 text-justify">{item.description}</p>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>
