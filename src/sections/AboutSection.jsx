@@ -32,8 +32,7 @@ const AboutSection = () => {
           className="text-gray-700 leading-relaxed text-justify mb-12"
         >
           Tout au long de mon parcours, j'ai acquis de solides expériences tant
-          en développement front-end que back-end, lors de mon alternance ainsi
-          que mes projets personnels.
+          en développement front-end que back-end, en alternance, en milieu associatif et désormais en tant que Développeur Fullstack en freelance.
           <br />
           J'ai également une bonne compréhension des enjeux éthiques, sociaux et
           technologiques liés à l'Intelligence artificielle. L'approfondissement

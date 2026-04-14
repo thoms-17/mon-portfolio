@@ -7,7 +7,7 @@ export const timelineItems = [
     iconType: "code",
   },
   {
-    year: "Depuis Mai 2025",
+    year: "Mai. 2025 - Oct. 2025",
     title: "Développeur Web & IA Bénévole",
     description:
       "Développement et maintenance du site de l’association avec PHP / Symfony. Amélioration du chatbot assistant via Copilot Studio",
