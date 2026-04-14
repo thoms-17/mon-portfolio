@@ -15,7 +15,7 @@ export const timelineItems = [
   },
   {
     year: "Oct. 2020 - Déc. 2024",
-    title: "Développeur Web (alternance)",
+    title: "Développeur Fullstack",
     description:
       "Conception et gestion de projets clients, création d'applications no-code / low-code. Intégration d’API (Google Contacts, Calendar, Outlook) et développement de fonctionnalités personnalisées en JavaScript et PHP. Animation de réunions clients bihebdomadaires, support technique (~20 tickets/mois), et contribution à l’architecture logicielle.",
     iconType: "code",
