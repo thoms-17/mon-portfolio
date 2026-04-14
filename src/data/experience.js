@@ -3,19 +3,19 @@ export const timelineItems = [
     year: "Depuis Novembre 2025",
     title: "Développeur Fullstack Freelance",
     description:
-      "Développement d'applications SaaS sur mesure pour les clients. Stack : React, Laravel (PHP). Conception d'architectures logicielles évolutives et sécurisées.",
+      "Développement d'applications SaaS sur mesure pour le compte de SNB Consulting. Stack : React, Laravel (PHP). Conception d'architectures logicielles évolutives et sécurisées.",
     iconType: "code",
   },
   {
     year: "Mai. 2025 - Oct. 2025",
-    title: "Développeur Web & IA Bénévole",
+    title: "Développeur Fullstack & IA Bénévole pour GNUT06",
     description:
       "Développement et maintenance du site de l’association avec PHP / Symfony. Amélioration du chatbot assistant via Copilot Studio",
     iconType: "code",
   },
   {
     year: "Oct. 2020 - Déc. 2024",
-    title: "Développeur Fullstack",
+    title: "Développeur Fullstack chez Nids Consulting",
     description:
       "Conception et gestion de projets clients, création d'applications no-code / low-code. Intégration d’API (Google Contacts, Calendar, Outlook) et développement de fonctionnalités personnalisées en JavaScript et PHP. Animation de réunions clients bihebdomadaires, support technique (~20 tickets/mois), et contribution à l’architecture logicielle.",
     iconType: "code",
