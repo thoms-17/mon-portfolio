@@ -42,6 +42,13 @@ export const timelineItems = [
     iconType: "graduation",
   },
   {
+    year: "2020",
+    title: "Développeur d'Applications",
+    description:
+      "BRED Informatique (Joinville-le-Pont) – Immersion dans un environnement de développement bancaire de grande échelle : montée en compétence sur le framework Angular et l'écosystème Java/IntelliJ.",
+    iconType: "code",
+  },
+  {
     year: "2019",
     title: "Baccalauréat Scientifique",
     description: "Lycée Van Dongen (Lagny-sur-Marne)",

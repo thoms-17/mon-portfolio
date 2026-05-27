@@ -27,5 +27,12 @@ export const projects = [
     description: "Gestion du back-end, notamment des routes d'une application Pokédex avec Node.js et Express.",
     github: "https://github.com/thoms-17/pokedex",
     redirect: "https://thoms-17.github.io/pokedex/",
+  },
+  {
+    id: 5,
+    title: "E-commerce",
+    image: "/images/ecommerce.svg",
+    description: "Développement d'une application e-commerce avec gestion des produits, panier et commandes avec Symfony.",
+    github: "https://github.com/thoms-17/e-commerce"
   }
 ];
